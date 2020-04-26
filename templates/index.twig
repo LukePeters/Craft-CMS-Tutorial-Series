@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ siteName }}</title>
+    <link rel="stylesheet" href="{{ siteUrl }}assets/style.css">
+</head>
+<body>
+
+    <header class="header">
+        
+        <a href="{{ siteUrl }}" class="logo">
+            <img src="{{ siteUrl }}assets/images/logo.svg" alt="Craft CMS">
+        </a>
+
+        <nav class="nav">
+            {% set slug = craft.app.request.getSegment(1) %}
+        
+            {% for link in header.navigation %}
+                {% set destination = link.linkDestination.one() %}
+                <a href="{{ destination.url }}" class="nav-link {% if slug == destination.slug %}nav-link--active{% endif %}">{{ link.linkText }}</a>
+            {% endfor %}
+        </nav>
+
+    </header>
+    
+    <div class="content-column">
+        {% block content %}
+            {# Page template inserted here #}
+        {% endblock %}
+    </div>
+
+    <footer class="footer">
+        {{ footer.richText }}
+    </footer>
+
+    <script src="{{ siteUrl }}assets/script.js"></script>
+    
+</body>
+</html>
