@@ -2,17 +2,21 @@
 
 {% block content %}
 
-  <h1>Our Blog</h1>
-  <p>Welcome to our sweet blog!</p>
+  <div class="content-column">
 
-  {% set posts = craft.entries.section("blogPosts").all() %}
+    <h1>Our Blog</h1>
+    <p>Welcome to our sweet blog!</p>
 
-  {% for post in posts %}
-    <h2>{{ post.title }}</h2>
-    {{ post.richText|striptags|slice(0, 180) }}...
-    <p>
-      <a href="{{ post.url }}">Read More</a>
-    </p>
-  {% endfor %}
+    {% set posts = craft.entries.section("blogPosts").all() %}
+
+    {% for post in posts %}
+      <h2>{{ post.title }}</h2>
+      {{ post.richText|striptags|slice(0, 180) }}...
+      <p>
+        <a href="{{ post.url }}">Read More</a>
+      </p>
+    {% endfor %}
+
+  </div>
 
 {% endblock %}

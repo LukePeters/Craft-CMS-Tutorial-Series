@@ -2,10 +2,14 @@
 
 {% block content %}
 
-  <h1>Hello World</h1>
+  <div class="content-column">
 
-  {{ entry.richText }}
+    <h1>Hello World</h1>
 
-  <img src="{{ entry.featureImage.one().getUrl('medium') }}" alt="Feature Image" class="feature-img">
+    {{ entry.richText }}
+
+    <img src="{{ entry.featureImage.one().getUrl('medium') }}" alt="Feature Image" class="feature-img">
+
+  </div>
 
 {% endblock %}

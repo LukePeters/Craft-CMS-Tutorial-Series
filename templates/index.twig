@@ -25,11 +25,9 @@
 
     </header>
     
-    <div class="content-column">
-        {% block content %}
-            {# Page template inserted here #}
-        {% endblock %}
-    </div>
+    {% block content %}
+        {# Page template inserted here #}
+    {% endblock %}
 
     <footer class="footer">
         {{ footer.richText }}

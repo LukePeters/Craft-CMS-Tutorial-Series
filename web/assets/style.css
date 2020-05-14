@@ -68,7 +68,17 @@ div, span, section, header, nav, footer, figure, p, h1, h2, h3, h4, h5, h6, img 
 }
 
 /* Typography & Images */
+h1 {
+  margin: 1em 0;
+  font-size: 38px;
+  line-height: 1.2;
+}
+
 p {
+  margin: 20px 0;
+}
+
+figure {
   margin: 20px 0;
 }
 
@@ -76,11 +86,41 @@ img {
   max-width: 100%;
 }
 
-.feature-img {
+.feature-img, .content-column figure img {
   margin: 20px 0 10px;
   width: 100%;
-  border-radius: 6px;
-  box-shadow: 0 3px 10px -2px rgba(0,0,0,0.3);
+  box-shadow: 0 5px 6px -3px rgba(0,0,0,0.15);
+}
+
+/* Banner */
+.banner {
+  text-align: center;
+  color: #ffffff;
+  background-color: #9b9b9b;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.banner:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  content: '';
+  display: block;
+  background: rgba(0,0,0,0.75);
+}
+
+.banner .content-column {
+  z-index: 10;
+  padding: 60px 30px;
+}
+
+.banner h1 {
+  font-size: 56px;
 }
 
 /* Footer */

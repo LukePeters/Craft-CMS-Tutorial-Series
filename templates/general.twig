@@ -2,8 +2,18 @@
 
 {% block content %}
 
-  <h1>{{ entry.title }}</h1>
+  <div class="banner" style="background-image: url('{{ siteUrl }}uploads/bruno-ramos-lara-sz3AWACktLc-unsplash.jpg')">
+    <div class="content-column">
 
-  {{ entry.richText }}
+      <h1>{{ entry.title }}</h1>
+    
+    </div>
+  </div>
+
+  <div class="content-column">
+  
+    {{ entry.richText }}
+
+  </div>
 
 {% endblock %}
